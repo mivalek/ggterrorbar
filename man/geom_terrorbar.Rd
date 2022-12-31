@@ -61,7 +61,7 @@ This geom treats each axis differently and, thus, can thus have two orientations
 \item \code{size} - size of the Ts in pt units
 \item \code{line_type} - type of connecting line when \code{connect = TRUE}
 \item \code{line_width} - width of connecting line when \code{connect = TRUE}
-\item \code{line_alpha} - alpha for connecting line when \code{connect = TRUE}. By default = .6 * \code{alpha}
+\item \code{line_alpha} - alpha for connecting line when \code{connect = TRUE}. By default = 0.6 * \code{alpha}
 }
 }
 

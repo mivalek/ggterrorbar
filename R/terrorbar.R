@@ -32,7 +32,7 @@
 #' - `size` - size of the Ts in pt units
 #' - `line_type` - type of connecting line when `connect = TRUE`
 #' - `line_width` - width of connecting line when `connect = TRUE`
-#' - `line_alpha` - alpha for connecting line when `connect = TRUE`. By default = .6 * `alpha`
+#' - `line_alpha` - alpha for connecting line when `connect = TRUE`. By default = 0.6 * `alpha`
 #'
 #' @seealso This is just a frivolous edit of [`ggplot2::geom_errorbar`]
 #' @export
