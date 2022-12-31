@@ -57,10 +57,10 @@ This geom treats each axis differently and, thus, can thus have two orientations
 \item \code{alpha}
 \item \code{colour}
 \item \code{group}
-\item \code{fontface} - one of `c("plain", "bold", "italic")
+\item \code{fontface} - one of \code{c("plain", "bold", "italic")}
 \item \code{size} - size of the Ts in pt units
 \item \code{line_type} - type of connecting line when \code{connect = TRUE}
-\item \code{line_width}- width of connecting line when \code{connect = TRUE}
+\item \code{line_width} - width of connecting line when \code{connect = TRUE}
 \item \code{line_alpha} - alpha for connecting line when \code{connect = TRUE}. By default = .6 * \code{alpha}
 }
 }
