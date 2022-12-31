@@ -117,7 +117,7 @@ GeomTerrorbar <- ggplot2::ggproto(
 
     t_grob <- ggplot2::GeomText$draw_panel(t_data, panel_params, coord, parse, na.rm, check_overlap)
     if (!connect) {
-      ggplot2:::ggname("geom_errorbar", grobTree(t_grob))
+      ggplot2:::ggname("geom_errorbar", grid::grobTree(t_grob))
     } else {
 
       x <- vctrs::vec_interleave(data$x, data$x, NA, data$x, data$x)
@@ -138,7 +138,7 @@ GeomTerrorbar <- ggplot2::ggproto(
 
       line_grob <- ggplot2::GeomPath$draw_panel(line_data, panel_params, coord, lineend = lineend)
 
-      ggplot2:::ggname("geom_errorbar", grobTree(line_grob, t_grob))
+      ggplot2:::ggname("geom_errorbar", grid::grobTree(line_grob, t_grob))
     }
   }
 )

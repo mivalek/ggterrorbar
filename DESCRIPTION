@@ -8,6 +8,6 @@ Description: * may only be suited for publication in Advances in Materials Scien
 License: GNU GPLv3
 Encoding: UTF-8
 LazyData: true
-Imports: ggplot2
+Imports: ggplot2, grid
 RoxygenNote: 7.2.3
 Roxygen: list(markdown = TRUE)
