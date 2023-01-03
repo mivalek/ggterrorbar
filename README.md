@@ -45,7 +45,9 @@ palmerpenguins::penguins |>
         mean = mean(body_mass_g),
         se = sd(body_mass_g) / sqrt(dplyr::n())
         ) |>
-        ggplot(aes(x = species, y = mean)) + geom_terrorbar(aes(ymin = mean - 2 * se, ymax = mean + 2 * se)) +
+        ggplot(aes(x = species, y = mean)) +
+        geom_terrorbar(aes(ymin = mean - 2 * se,
+                           ymax = mean + 2 * se)) +
         geom_point() +
         theme_bw()
 ```
