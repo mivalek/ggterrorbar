@@ -1,38 +1,43 @@
+---
+output: github_document
+---
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  message = FALSE,
+  warning = FALSE,
+  fig.height=4,
+  fig.width=5
+)
+```
 
 # Introducing `geom_terrorbar()` <img src='man/figures/terrorbar_hex.png' align="right" height="131.5" />
 
-Create galaxy-brain-level errorbars like in *THAT* paper
+Create galaxy-brain-level errorbars like in _THAT_ paper
 
 ## Motivation
 
-In July 2022, a [now retracted
-paper](https://www.hindawi.com/journals/amse/2022/3802603/) appeared in
-a special issue of a Hindawi journal Advances in Materials Science and
-Engineering, that contained a bar chart with the letter <span
-style="font-family:Times New Roman">T</span> pasted above bars,
-presumably as a substitute for error bars.
+In July 2022, a [now retracted paper](https://www.hindawi.com/journals/amse/2022/3802603/) appeared in a special issue of a Hindawi journal Advances in Materials Science and Engineering, that contained a bar chart with the letter <span style="font-family:Times New Roman">T</span> pasted above bars, presumably as a substitute for error bars.
 
-I strongly believe that everyone should be able to quickly produce this
-genius graphics. That is the only purpose of `ggterror`, an extension to
-`R`’s `ggplot2` package. Unlike the graphics in the original – and this
-word is doing a lot of work here – paper, however, this extension
-produces actual errorbars.
+I strongly believe that everyone should be able to quickly produce this genius graphics. That is the only purpose of `ggterror`, an extension to `R`'s `ggplot2` package. Unlike the graphics in the original -- and this word is doing a lot of work here -- paper, however, this extension produces actual errorbars.
 
 ## Installation
 
 You can install `ggterror` from github using the `remotes` package:
 
-``` r
+```{r gh-installation, eval = FALSE}
 # install.packages("remotes")
 remotes::install_github("mivalek/ggterror")
 ```
 
 ## Usage
 
-The package contains a single function `geom_terrorbar()` that should be
-used in much the same way as `ggplot2::geom_errorbar()`
+The package contains a single function `geom_terrorbar()` that should be used in much the same way as `ggplot2::geom_errorbar()`
 
-``` r
+```{r example}
 library(ggplot2)
 library(ggterror)
 library(palmerpenguins)
@@ -50,28 +55,19 @@ palmerpenguins::penguins |>
         theme_bw()
 ```
 
-![](man/figures/README-example-1.png)<!-- -->
 
-On top of the usual aesthetics you’d pass to `ggplot2::geom_errorbar()`,
-this function takes a few additional arguments that govern the overal
-look of the <span style="font-family:Times New Roman">T</span>s and the
-connecting lines:
+On top of the usual aesthetics you'd pass to `ggplot2::geom_errorbar()`, this function takes a few additional arguments that govern the overal look of the <span style="font-family:Times New Roman">T</span>s and the connecting lines:
 
-- `connect` - logical. Whether or not the <span
-  style="font-family:Times New Roman">T</span>s should be connected with
-  a line.
+- `connect` - logical. Whether or not the <span style="font-family:Times New Roman">T</span>s should be connected with a line.
 - `fontface` - one of `c("plain", "bold", "italic")`
-- `size` - size of the <span
-  style="font-family:Times New Roman">T</span>s in pt units
+- `size` - size of the <span style="font-family:Times New Roman">T</span>s in pt units
 - `line_type` - type of connecting line when `connect = TRUE`
 - `line_width` - width of connecting line when `connect = TRUE`
-- `line_alpha` - alpha for connecting line when `connect = TRUE`. By
-  default, `line_alpha = 0.6 * alpha` of the <span
-  style="font-family:Times New Roman">T</span>s
+- `line_alpha` - alpha for connecting line when `connect = TRUE`. By default, `line_alpha = 0.6 * alpha` of the <span style="font-family:Times New Roman">T</span>s
 
 Reproducing the original plot is easy with `geom_terrorbar()`:
 
-``` r
+```{r orig-plot}
 
 library(ggtext)
 
@@ -97,7 +93,5 @@ df |> ggplot(aes(x, y)) +
     axis.ticks = element_blank()) +
   guides(fill = "none")
 ```
-
-![](man/figures/README-orig-plot-1.png)<!-- -->
 
 Hope you have fun creating some true classics!
